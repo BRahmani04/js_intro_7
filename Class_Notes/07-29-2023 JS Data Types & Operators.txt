@@ -1,0 +1,140 @@
+
+
+
+-7-29-2023 JS Data Types & Operators
+
+RECAP:
+
+
+
+
+Concatenation => putting together strings or strings with VARIABLES+ is used for concatenation and addition (Math Operators)
+
+number + number -> Math - addition
+string + number -> Concatenation
+number + string -> Concatenation
+string + string -> Concatenation
+
+
+VARIABLES
+var: was used before ES6 (2015)
+let: mutable- can be changed - not final
+const: imutable - can not be changed - final
+
+Home work:
+•const name, age; // false
+•let n1 = 45, n2; // true
+•const num1 = 45, num2; // false
+•let x, let y; // false
+•let a; let b; // true but not preferred
+•let i1; i2; // false
+
+
+Declaration    let name;
+assignment     name = "";
+re-assignment  name = " John";
+initialization let age = 45;
+
+IT= information technology
+Information: data
+
+DATA TYPES: There are two types of data.
+PRIMIRIVES: not advance or complex
+string: email, name , lastname, address etc.
+   we store strings in double quotes, single quotes
+
+Numbers: age, prices, quantity... 
+    whole numbers: 10, 20, 5 ....
+    floating numbers: 10.5, 1.3343
+
+    it is good to use up to 15-16 precision
+    
+
+
+BigInt: used for larger Numbers
+    123542345634564567543456
+
+
+Boolean: true or false
+
+REFERENCE TYPE: complex - advance data types-objects
+
+credentials: userName and password
+
+
+The difference between =, ==, ===? // interview question
+= assignment Operators
+== comparison
+=== strict comparison
+
+undefined vs null  
+
+undefined: it is variable declared but not assigned with any value 
+let age;
+
+null: it is variable assigned with null (explicity). it states you have no information about the value.
+
+let age = null;
+
+
+BigInterger
+
+
+
+
+JS OPERATORS 
+= assignment operator
+
+
+
+Arithmatick operators
++ sum or addition
+* multiplication - product
+- minus or substraction
+/ division
+% modulus or remainder
+** exponentiation 
+++ increment
+-- decrement
+
+Comparison operators
+== equals
+=== strict equal
+!= not equal
+!== strick not equal
+> great than
+< less then 
+>= greator equal
+<= less than equal
+
+Logical operators 
+&& and
+|| or
+! not
+
+15 % 4 = 3          => 15 = 3*4 + 3
+27 % 8 = 3          => 27 = 3*8 + 3
+21 % 21 = 0         => 21 = 1*21 + 0
+75 % 25 = 0         => 75 = 3*25 + 0
+
+3 % 5 =  3           => 3 = 0*5 + 3
+
+2376452735 % 2376452736 = 2376452735
+
+
+1. if the number on the left is less than the number on the right   => the result is the left number itself
+2. if the left number is greater than the right number              => you find the remainder
+3. if the left number is divisible by the right number              => the result is ZERO
+
+
+
+x % 2 == 0      => EVEN 2, 4, 0, -6, 10, 14
+x % 2 == 1      => ODD 1, 3, 5, -9
+
+
+
+PRIORITY
+1. parantheses
+2. exponentiation
+3. multiplication, division
+4. addition, subtraction
