@@ -2,7 +2,7 @@
 
 
 
-console.log(3 == "3" || 2 + 5 === "7") && !(5 < 10 || !false); // true
+coe.log((3 == "3" || 2 + 5 === "7") && !(5 < 10 || !false)); nsol // true
 console.log((!true && !false) || 5 * 2 === true * 10); // true
 console.log("3" * "5" >= 15 && true == 1 && " " == false && "" === 0); // false
 console.log(!(5 ** (10 / 5) === 25 || 5 === "5" || 3 >= 5));// false
@@ -208,6 +208,10 @@ function getRandomNumber(start, end) {
     return Math.floor(Math.random() * (end - start + 1)) + start;
 }
 
+function getRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
 let nu1 = getRandomNumber(1, 10);
 let nu2 = getRandomNumber(1, 10);
 let nu3 = getRandomNumber(1, 10);
@@ -220,7 +224,7 @@ function getRandomNumber(start, end) {
     return Math.floor(Math.random() * (end - start + 1)) + start;
 }
 
-let qt =getRandomNumber(1, 100);
+let qt = getRandomNumber(1, 100);
 console.log(qt);
 
 if (qt > 0 && qt <= 25) console.log(`${qt} is 1st quarter`);
@@ -234,7 +238,7 @@ function getRandomNumber(start, end) {
     return Math.floor(Math.random() * (end - start + 1)) + start;
 }
 
-let mid = getRandomNumber (1, 100);
+let mid = getRandomNumber(1, 100);
 console.log(mid);
 
 if (mid <= 50) console.log(`${mid} is 1st Half`);
@@ -358,3 +362,163 @@ console.log(firstlastCharacter(""));
 console.log(firstlastCharacter("abcde"));
 
 // 32
+
+function hasFive(word) {
+    return word.length >= 5;
+}
+
+console.log(hasFive("Tech"));
+console.log(hasFive("Global"));
+console.log(hasFive(""));
+console.log(hasFive("12345"));
+console.log(hasFive("hello"));
+
+// 33
+
+function middle(word) {
+    if (word.length % 2 === 0) return word.slice(word.length / 2 - 1, word.length / 2 + 1);
+    else return word[(word.length - 1) / 2];
+}
+console.log(middle("Tech"));
+console.log(middle("Global"));
+console.log(middle("abcde"));
+console.log(middle("abc"));
+console.log(middle("abc"));
+console.log(middle("abcdefg"));
+
+// 34
+
+
+
+function longer(word1, word2) {
+    if (word1.length < word2.length) return word2
+    else return word1
+}
+
+console.log(longer("global", "tech"));
+console.log(longer("hello", "hi"));
+console.log(longer("hello", "world"));
+console.log(longer("hello", "12345"));
+
+// 35
+
+function longer(word1, word2) {
+    if (word1.length < word2.length) return word1
+    else return word2
+}
+
+
+console.log(longer("global", "tech"));
+console.log(longer("hello", "hi"));
+console.log(longer("hello", "world"));
+console.log(longer("hello", "12345"));
+
+// 36
+
+function concat(word1, word2) {
+    return word1 + word2
+}
+
+console.log(concat("tech", "global"));
+console.log(concat("hello", "world"));
+console.log(concat("", "tech"));
+
+// 37 
+
+function startVowel(word1) {
+    return ("AEOUIaeoui".includes(word1[0]));
+}
+
+console.log(startVowel("Tech"));
+console.log(startVowel("Apple"));
+console.log(startVowel("abc"));
+
+
+
+function getRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+let num1 = getRandomNumber(1, 10);
+console.log(num1);
+console.log(num1 % 2 === 0);
+
+
+function getRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+let num1 = getRandomNumber(1, 100);
+console.log(num1);
+
+if (num1 <= 50) console.log("1st half");
+else console.log("2nd half");
+
+function hasFive(string) {
+    return string.length >= 5;
+}
+
+console.log(hasFive("Tech"));
+console.log(hasFive("global"));
+console.log(hasFive("hello"));
+console.log(hasFive("12345"));
+
+function shorter(word1, word2) {
+    if (word1.length >= word2.length) return word2;
+    else return word1;
+}
+
+console.log(shorter("Tech", "Global"));
+console.log(shorter("Tech", "helo"));
+
+function lastCharacter(word) {
+    return word.slice(-1);
+}
+console.log(lastCharacter("Tech"));
+
+function middle(str) {
+    if (str.length % 2 === 0) return str.slice(str.length / 2 - 1, str.length / 2 + 1);
+    else return str[(str.length - 1) / 2];
+}
+console.log(middle("Tech"));
+console.log(middle("Techo"));
+
+function firstLast(word) {
+    if (word.length > 1) return word[0] + word.slice(-1);
+    else return word
+}
+console.log(firstLast("tech"));
+
+function middle(word) {
+    if (word.length % 2 === 0) return word.slice(word.length / 2 - 1, word.length / 2 + 1);
+    else return word[(word.length - 1) / 2];
+}
+console.log(middle("Global"));
+
+function middle(str) {
+    if (str.length > 1) return str[0] + str.slice(-1);
+    else return str
+}
+console.log(middle("techglobal"));
+
+
+function getRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+    let num1 = getRandomNumber(1, 10);
+    console.log(num1);
+    console.log(num1 * num1 * num1);
+
+    function getRandomNumber(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+        let num1 = getRandomNumber(1, 10);
+        let num2 = getRandomNumber(1, 10);
+        console.log(num1, num2);
+        console.log(Math.min(num1, num2));
+
+        function startVowel(str) {
+            return "AEOUIaeoui".includes(str[0]);
+            }
+            console.log(startVowel("Tech"));
+            console.log(startVowel("Apple"));
