@@ -22,3 +22,8 @@ console.log(numbers[4]);
 // you can have all of these in an array basically whatever you want
 const mixData = ["Hello", true, 12, 10.5, undefined, null, new Date(), ["Hello"], {}];
 console.log(mixData);
+
+
+for (let i = 1; i <= 50; i++) {
+    if (i % 2 === 0 && i % 3 === 0) console.log(i);
+}
