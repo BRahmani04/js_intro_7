@@ -172,23 +172,17 @@ THEN:
 
 const object = ['Pen', 'notebook', 'Book', 'paper', 'bag', 'pencil', 'Ruler'];
 
-let count = 0;
-
 console.log(object);
-
+let count = 0;
+let att = 0;
 for (let i = 0; i < object.length; i++) {
-    if (object[i][0].toLowerCase() === "p" || object[i][0].toLowerCase() === "b") count++;
+    if (object[i][0].toLowerCase() === "p" || object[i][0].toLowerCase() === "b") count++; {
+        if (object[i].toLowerCase().includes("book") || object[i].toLowerCase().includes("pen")) att++;
+    }
 
 }
-console.log(`Elements starting with "B" or "P" = ${count}`);
-
-count = 0;
-
-for (let i = 0; i < object.length; i++) {
-    if (object[i].toLowerCase().includes("book") || object[i].toLowerCase().includes("pen")) count++;
-}
-
-console.log(`Elements having "book" or "pen" = ${count}`);
+console.log(`Elements starting with 'B' or 'P' = ${count}`)
+console.log(`Elements having "book" or "pen" = ${att}`);
 
 /*
 -Create an array that stores numbers below.
@@ -254,21 +248,29 @@ value and data types of the elements must be same.
 console.log('\nTask 15\n');
 
 function firstDuplicate(Array) {
-  
+        let firstDuplicate = null;
     for (let i = 0; i < Array.length; i++) {
-        for (let j = i + 1; j < Array.length; j++) {
-            if (Array[i] === Array[j]) return Array[i];
+        let currentNum = Array[i];
+        let rest = Array.slice(i + 1);
+        if (rest.includes(currentNum)) {
+            firstDuplicate = currentNum
+               break;
         }
     }
-    return -1;
+
+    if(firstDuplicate === null) return -1;
+    else return firstDuplicate;
 }
 
-console.log(firstDuplicate([3, 7, 10, 0, 3, 10]));
+
+console.log(firstDuplicate([ 3, 7, 10, 0, 3, 10]));
 console.log(firstDuplicate([ 5, 7, 7, 0, 5, 10 ]));
 console.log(firstDuplicate([ 5, '5', 3, 7, 4 ]));
 console.log(firstDuplicate([ 123, 'abc', '123', 3, 'abc' ]));
 console.log(firstDuplicate([ 1, 2, 3]));
 console.log(firstDuplicate([ 'foo', 'abc', '123', 'bar']))
+
+
 
 /*
 Write a function named as getDuplicates() which takes an 
@@ -279,19 +281,28 @@ return empty array if there are no duplicates in the array. For
 two elements to be considered as duplicated, value and data 
 types of the elements must be same.
 */
+console.log('\nTask 16\n');
 
+function getDuplicates(Array) {
+    let duplicates = [];
+    for(let i = 0; i < Array.length; i++ ) {
 
+        let theDuplicate = Array[i];
 
+        let theRest = Array.slice(i + 1);
 
+        if (theRest.includes(theDuplicate)){
+        if (!duplicates.includes(theDuplicate))
+        duplicates.push(theDuplicate);
+        }
+        }
+        return duplicates;
+    }
 
-
-
-
-
-
-
-
-
+console.log(getDuplicates([ 0, -4, -7, 0, 5, 10, 45, -7, 0 ]));
+console.log(getDuplicates([ 1, 2, 5, 0, 7 ]));
+console.log(getDuplicates(['A', 'foo', '12' , 12, 'bar', 'a', 'a', 'foo' ]));
+console.log(getDuplicates([ 'foo', '12' , 12, 'bar', 'a' ]));
 
 /*
 Write a function named as reverseStringWords() which takes a string 
@@ -300,9 +311,101 @@ reversed when invoked.
 NOTE: Make your code dynamic that works for any string. Make sure you 
 consider extra spaces before and after words in the given string
 */
+console.log('\nTask 17\n');
 
 function reverseStringWords(word) {
+    let string = word.split(' ')
+
+    for (let i = 0; i < string.length; i++) {
+       string[i] = string[i].split('').reverse().join('');
+    }
+
+    const reverseWord = string.join(' ');
+
+    return reverseWord
+}
     
+
+console.log(reverseStringWords('Hello World'));
+console.log(reverseStringWords('I like JavaScript'));
+console.log(reverseStringWords('Hello'));
+console.log(reverseStringWords(''));
+console.log(reverseStringWords(' '));
+
+/*
+Write a function named as getEvens() which takes 2 number arguments and returns all the even numbers as an array stored from smallest even number to greatest even number when invoked.
+NOTE: Make your code dynamic that works for any numbers and return empty array if there are no even numbers in the range of given 2 numbers. 
+Assume you will not be given negative numbers.
+*/
+console.log('\nTask 18\n');
+
+function getEvens(x, y) {
+    let even = [];
+    
+    for (let i =  Math.min(x, y); i <=  Math.max(x, y); i++) {
+
+        if (i % 2 === 0 )
+        even.push(i)
+        
+    }
+    return even;
 }
 
-console.log(reverseStringWords("Hello World"))
+console.log(getEvens(2, 7));
+console.log(getEvens(17, 5));
+console.log(getEvens(4, 4));
+console.log(getEvens(3, 3));
+
+/*
+Write a function named as getMultipleOf5() which takes 2 number arguments and returns all the numbers divisible by 5 as an array stored from first found match to last found match when invoked.
+NOTE: Make your code dynamic that works for any numbers and return empty array if there are no numbers divisible by 5 in the range of given 2 numbers. 
+Assume you will not be given negative numbers.
+*/
+
+console.log('\nTask 19\n');
+
+function getMultipleOf5(x, y) {
+    const number = [];
+
+    let num1 = Math.min(x, y);
+    let num2 = Math.max(x, y);
+    for (let i = num1; i <= num2; i ++) {
+        if(i % 5 === 0) 
+        number.push(i)
+    }
+    if (x < y) return number;
+    else return number.reverse()
+}
+
+console.log(getMultipleOf5(3, 17));
+console.log(getMultipleOf5(23, 5));
+console.log(getMultipleOf5(5, 5));
+console.log(getMultipleOf5(2, 4));
+
+/*
+Write a function named as fizzBuzz() which takes 2 number arguments and returns a string composed with below requirements when invoked.
+You need to find all the numbers within the range of given 2 numbers (both inclusive) and store them in a string from smallest to greatest number with a ' | ' separator for each number.
+You will need to convert numbers divisible by 3 to 'Fizz'
+You will need to convert numbers divisible by 5 to 'Buzz'
+You will need to convert numbers divisible by both 3 and 5 to 'FizzBuzz’
+The rest will stay the same.
+NOTE: Make your code dynamic that works for any numbers.
+Assume you will not be given negative numbers.
+*/
+
+function fizzBuzz(x, y) {
+    const Array = [];
+
+    for (let i = Math.min(x, y); i <= Math.max(x, y); i++){
+        if (i % 3 === 0 && i % 5 === 0) Array.push('FizzBuzz');
+        else if (i % 3 === 0) Array.push('Fizz');
+        else if (i % 5 === 0) Array.push('Buzz');
+        else Array.push(i);
+    }
+    return Array.join(' | ');
+}
+
+console.log(fizzBuzz(13, 18));
+console.log(fizzBuzz(12, 5));
+console.log(fizzBuzz(5, 5));
+console.log(fizzBuzz(9, 6));
