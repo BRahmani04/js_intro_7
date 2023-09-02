@@ -392,6 +392,7 @@ The rest will stay the same.
 NOTE: Make your code dynamic that works for any numbers.
 Assume you will not be given negative numbers.
 */
+console.log('\nTask 20\n');
 
 function fizzBuzz(x, y) {
     const Array = [];
