@@ -83,8 +83,8 @@ Write a function named countWords() which takes a string argument and returns th
 console.log('\n Task 05\n');
 
 function countWords(array) {
-    return array.trim().split(' ').length
-}  
+    return array.trim().split(' ').length;
+}
 
 console.log(countWords("     Javascript is fun       "));
 console.log(countWords("Cypress is an UI automation tool.    "));
@@ -99,13 +99,13 @@ n! = n × (n-1) × (n-2) × ... × 2 × 1
 
 Assume you will not be given a negative number.
 */
-
+console.log('\n Task 06\n');
 function factorial(number) {
     let factorial = 1;
-    for(let i = 1; i <= number; i++) { 
+    for (let i = 1; i <= number; i++) {
         factorial *= i;
     }
-    
+
     return factorial;
 }
 
@@ -123,19 +123,22 @@ Examples: kayak, civic, madam
 
 NOTE: your function should ignore case sensitivity
 */
+console.log('\n Task 07\n');
 
 function isPalindrome(str) {
-   
-    return str.toLowerCase().split('').toString().replaceAll(',', '') === str.toLowerCase().reverse()
-} 
-console.log(isPalindrome("Hello"))
-console.log(isPalindrome("Kayak"))
-console.log(isPalindrome("civic"))
-console.log(isPalindrome("abba"))
-console.log(isPalindrome("ab a"))
-console.log(isPalindrome("123454321"))
-console.log(isPalindrome("A"))
-console.log(isPalindrome(""))
+
+    reverseString = str.split('').reverse().join('');
+
+    return str.toLowerCase() === reverseString.toLowerCase();
+}
+console.log(isPalindrome("Hello"));
+console.log(isPalindrome("Kayak"));
+console.log(isPalindrome("civic"));
+console.log(isPalindrome("abba"));
+console.log(isPalindrome("ab a"));
+console.log(isPalindrome("123454321"));
+console.log(isPalindrome("A"));
+console.log(isPalindrome(""));
 
 /*
 Write a function named as countMultipleWords() which takes an array as an argument
@@ -143,26 +146,22 @@ Write a function named as countMultipleWords() which takes an array as an argume
 
 NOTE: Be careful about the extra whitespaces before and after the array element.
 */
+console.log('\n Task 08\n');
 
 function countMultipleWords(array) {
     let count = 0;
-    for (let i = 0; i < array.lengthl; i++) {
-        let str = array[i];
-        let rest = array.slice(i + 1);
-        if(rest.indexOf('foo')) count++
+    for (let i = 0; i < array.length; i++) {
+        let str = array[i].trim();
+        let word = str.split(' ');
+        if (word.length > 1) count++
     }
-    return count
+    return count;
 }
 
-console.log(countMultipleWords([ "foo", "", "    ", "foo bar", "     foo" ]));
-
-
-
-function countMultipleWords(array) {
-    return array.filter(x => x.toLowerCase().indexOf('foo')).length ;
-}
-
-console.log(countMultipleWords([ "foo", "", "    ", "foo bar", "     foo" ]));
+console.log(countMultipleWords(["foo", "", "    ", "foo bar", "     foo"]));
+console.log(countMultipleWords(["foo", "bar", "foobar", "     foobar   "]));
+console.log(countMultipleWords(["f o o", "b a r", "foo bar", "     foo bar   "]));
+console.log(countMultipleWords([]));
 
 
 /*
@@ -176,15 +175,16 @@ count3OrLess("JavaScript is fun") 		-> 3
 count3OrLess("My name is John Doe") 	-> 3
 count3OrLess("") 			-> 0
 */
+console.log('\n Task 09\n');
 
 function count3OrLess(string) {
-    const arr = string.split(' ')
+    const arr = string.split(' ');
     let count = 0;
-    for (const word of arr){
+    for (const word of arr) {
         if (word.length <= 3 && word.length !== 0) count++
-        
+
     }
-    return count
+    return count;
 }
 console.log(count3OrLess("Hello"));
 console.log(count3OrLess("Hi John"));
@@ -200,17 +200,118 @@ NOTE: Mathematically, Prime number is a number that can be divided only by itsel
 Examples: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31…
 NOTE: The smallest prime number is 2 and there is no negative prime numbers.
 */
+console.log('\n Task 10\n');
 
 function isPrime(number) {
-   if (number < 2) return false
-   for (let i = 0; i < Math.sqrt(number); i++){
-    if (number % i === 0) return true 
+    if (number < 2) return false;
+    for (let i = 0; i < number; i++) {
+        if (number % i === 0) return true;
+    }
+    return false
 }
-return false
+console.log(isPrime(5));
+console.log(isPrime(2));
+console.log(isPrime(29));
+console.log(isPrime(-5));
+console.log(isPrime(0));
+console.log(isPrime(1));
+
+/*
+Write a function named add() which takes two array of numbers as argument and returns a new array with sum of given arrays elements.
+
+NOTE: Be careful about the array sizes as they could be different.
+*/
+console.log('\n Task 11\n');
+
+function add(arr1, arr2) {
+    const sum = [];
+    const max = Math.max(arr1.length, arr2.length);
+    for (let i = 0; i < max; i++) {
+        let num = arr1[i] || 0;
+        let number = arr2[i] || 0;
+        sum.push(num + number);
+    }
+    return sum;
 }
-console.log(isPrime(5))
-console.log(isPrime(2))
-console.log(isPrime(29))
-console.log(isPrime(-5))
-console.log(isPrime(0))
-console.log(isPrime(1))
+
+console.log(add([3, 0, 0, 7, 5, 10], [6, 3, 2]));
+console.log(add([10, 3, 6, 3, 2], [6, 8, 3, 0, 0, 7, 5, 10, 34]));
+console.log(add([-5, 6, -3, 11], [5, -6, 3, -11]));
+
+
+
+/*
+Write a function named as removeExtraSpaces() which takes a string word as an argument 
+and returns the string back with all extra spaces removed when invoked.
+*/
+console.log('\n Task 12\n');
+
+function removeExtraSpaces(str) {
+    return str.split(' ').filter(x => x.length >= 1).join(' ');
+}
+
+console.log(removeExtraSpaces("Hello"));
+console.log(removeExtraSpaces("   Hello  World  "));
+console.log(removeExtraSpaces("     JavaScript is          fun"));
+console.log(removeExtraSpaces(""));
+
+/*
+Write a function named findClosestTo10() which takes an array of numbers as argument and returns the closest element to 10 from the given array.
+
+NOTE: Assume that length of array is always more than zero.
+NOTE: Ignore the 10 itself.
+NOTE: If there are more than one numbers are close equally, return the smaller number.
+*/
+console.log('\n Task 13\n');
+
+function findClosestTo10(arr) {
+    let num = Infinity;
+    for (let i = 0; i < arr.length; i++) {
+        const diff = Math.abs(arr[i] - 10);
+        if (arr[i] === 10) continue;
+        else if (diff < Math.abs(num - 10)) num = arr[i];
+        else if (diff === Math.abs(num - 10) && arr[i] < num) num = arr[i];
+        
+    }
+    return num;
+}
+
+console.log(findClosestTo10([10, -13, 5, 70, 15, 57,]));
+console.log(findClosestTo10([10, -13, 8, 12, 15, -20]));
+console.log(findClosestTo10([0, -1, -2]));
+
+
+/*
+Write a function named as isEmailValid() which takes a string email as an argument
+ and returns true if the email is valid or returns false otherwise when invoked.
+
+NOTE: A VALID EMAIL:
+should NOT have any space.
+should not have more than one “@” character.
+should be in the given format <2+chars>@<2+chars>.<2+chars> meaning
+There should be at least characters before @ character.
+There should be at least 2 characters between @ and . Characters.
+There should be at least 2 characters after the . character.
+*/
+
+console.log('\n Task 14\n');
+
+
+function isEmailValid(string) {
+    if (string.includes(' ')) return false
+    else if (!string.includes('.com')) return false
+    else if (string.split('@').length > 2) return false
+    else if (string.split('@')[0].length < 2) return false
+    else if (string.split('@')[1].split('.')[0].length < 2 ) return false
+    else if (string.split('.')[1].length < 2) return false
+   return true
+}
+console.log(isEmailValid(""));
+console.log(isEmailValid("@gmail.com"));
+console.log(isEmailValid("johndoe@yahoo"));
+console.log(isEmailValid("johndoe@.com"));
+console.log(isEmailValid("a@outlook.com"));
+console.log(isEmailValid("johndoe@@gmail.com"));
+console.log(isEmailValid("johndoe@a.com"));
+console.log(isEmailValid("johndoe@gmail.com"));
+
