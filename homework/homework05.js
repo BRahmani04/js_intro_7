@@ -100,8 +100,10 @@ n! = n × (n-1) × (n-2) × ... × 2 × 1
 Assume you will not be given a negative number.
 */
 console.log('\n Task 06\n');
+
 function factorial(number) {
     let factorial = 1;
+
     for (let i = 1; i <= number; i++) {
         factorial *= i;
     }
@@ -314,4 +316,46 @@ console.log(isEmailValid("a@outlook.com"));
 console.log(isEmailValid("johndoe@@gmail.com"));
 console.log(isEmailValid("johndoe@a.com"));
 console.log(isEmailValid("johndoe@gmail.com"));
+
+
+/*
+Write a function named as isPasswordValid() which takes a string email as an argument and returns true if the password is valid or returns false otherwise when invoked.
+
+NOTE: A VALID PASSWORD:
+should have length of 8 to 16 (both inclusive).
+should have at least 1 digit, 1 uppercase, 1 lowercase and 1 special char.
+should NOT have any space.
+
+*/
+
+console.log('\n Task 15\n');
+
+function isPasswordValid(string) {
+    if (string.length < 8 || string.length > 16 || string.includes(' ')) return false
+    
+    let hasDigit = false;
+    let hasUpperCase = false;
+    let hasLowerCase = false;
+    let hasCharacter = false;
+
+    for (const char of string){
+    
+        if(char >= 0 && char <= 9)  hasDigit = true
+        else if (char >= 'A' && char <= 'Z')  hasUpperCase = true
+        else if (char >= 'a' && char <= 'z')  hasLowerCase = true
+        else if ("!@#$%^&*()_+{}[]:;<>,.?~\\/-".includes(char))  hasCharacter = true
+    }
+    
+   return hasDigit && hasUpperCase && hasLowerCase && hasCharacter;
+}
+
+
+console.log(isPasswordValid(""));
+console.log(isPasswordValid("abcd"));
+console.log(isPasswordValid("abcd12345"));
+console.log(isPasswordValid("Abcd1234"));
+console.log(isPasswordValid("Chicago12345US!#$%"));
+console.log(isPasswordValid("Abcd1234$"));
+console.log(isPasswordValid("Chicago123$"));
+console.log(isPasswordValid("Test1234#"));
 
