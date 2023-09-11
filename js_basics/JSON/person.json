@@ -1,0 +1,6 @@
+let person = {
+    "name": "Alex",
+    "age": 28
+}
+
+console.log(person)

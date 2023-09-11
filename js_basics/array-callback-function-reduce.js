@@ -12,3 +12,6 @@ console.log(numbers.reduce((sum, num) => {
     if (num % 2 === 0) return sum + num
     else return sum
 }, 0));
+
+
+

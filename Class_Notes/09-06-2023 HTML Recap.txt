@@ -1,0 +1,18 @@
+
+HTML: is a language we use to display everything we see on a web browser.
+TAGS: Important part of HTML that we use to create elements for example
+    - head
+    -body
+    -div
+    -img
+    -p - Paragraph
+
+ATTRIBUTES :
+    -img > src is a mandatory attribute, because we need the resource of the images.
+    -style this is an optional attributes.
+
+STYLING:
+    - There are 3 ways: inline, internal, external
+    - Inline -> by using the style attribute inside HTML elements
+    - Internal -> by using a <style> element in the <head> section
+    - External -> by using a <link> element to link to an external CSS file
