@@ -240,7 +240,7 @@ NOTE: Assume that you will not be given empty array and if the array has only 1 
 
 NOTE: Be careful when there is multiple min numbers.
 */
-console.log('\n Task 10\n');
+console.log('\n Task 12\n');
 
 const secondMin = (array) => {
     if (array.length < 2) return array[0];
@@ -259,6 +259,7 @@ Write a method named mostRepeated() takes an array argument and returns the most
 
 NOTE: Assume that you will not be given empty array and the count of one element will always be more than the others.
 */
+console.log('\n Task 13\n');
 
 const mostRepeated = (array) => {
     if (array.length < 2)
