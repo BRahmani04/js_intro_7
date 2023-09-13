@@ -142,3 +142,17 @@ const primeAdminDetails2 = (num1, num2, num3) => {
 
 primeAdminDetails1(1,2,3)
 primeAdminDetails2(1,2,3)
+
+
+function double() { 
+    
+}
+function addOne() { 
+    
+}
+function ab(arr, cb) {
+    
+}
+
+ab([1,2,3], double) // [2,4,6] => double
+ab([1,2,3], addOne) // [2,3,4] => add +1
