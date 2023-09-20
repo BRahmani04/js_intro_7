@@ -1,0 +1,21 @@
+DOM
+
+window object
+    Lets see what is window object when we run code runner?
+    console.log(window); // ReferenceError: window is not defined
+    we get an error because we are running our code in NodeJS environment
+
+
+alert () - method
+
+prompt() - method
+    1. null - if you cancel 
+    2. string value that user inputs to the prompt
+
+confirm() -method
+its a boolean function so it you press okay returns true if you press cancel returns false
+
+localStorage
+    We can store [key value] paired data.
+    Your data will live in localStorage indentifying
+    
