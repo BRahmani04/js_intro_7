@@ -54,3 +54,8 @@ console.log(section);
 
 const allImages = document.querySelectorAll('img');
 console.log(image);
+
+// id, = getElementById() - gets the single element
+// class, = getElementsByClassName() - gets all elements with same classname  in HTML COLLECTION
+// tag = getElementsByTagName() -gets all same elements in HTML COLLECTION
+// querySelector(), querySelectorAll() -> id, class, tag
